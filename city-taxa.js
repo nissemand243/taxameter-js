@@ -16,15 +16,19 @@ class fakeClock{
     }
 }
 
-class kronePriceStrategy{
+class cityPriceStrategy{
     calculatePrice(afstand, tidGaaet){
-        var price = (9 * Math.max(afstand-1, 0));
-        var priceFoerstKm = (5 *Math.min(1, afstand));
-        var prisTid = (6.25 * tidGaaet + 39);
-        return price + priceFoerstKm + prisTid
+        var price = (8.5 * (afstand)) + (6.25 * tidGaaet + 72);
+        console.log(price);
+        if(price < 75){
+            return 75;
+        }else{
+            return price;
+        }
     }
+    
 }
 
 
 var clock = new realClock();
-start(new Taxameter(clock, new kronePriceStrategy()));
+start(new Taxameter(clock, new cityPriceStrategy()));
