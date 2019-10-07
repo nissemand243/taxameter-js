@@ -101,7 +101,6 @@ function start(taxameter) {
             opdater();
         });
         elementer.slut.addEventListener("click", () => {
-            alert("Det bliver: " + taxameter.beregnPris() + " DKK");
             taxameter.slutTur();
             opdater();
         });

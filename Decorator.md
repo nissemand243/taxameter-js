@@ -32,4 +32,4 @@ KroneTaxa vil gerne føre statistik på hvor mange korte ture (under 1km) der k�
 Ekstra: gem decoratoren som en global variabel og giv den en metode (metoder er funktioner der er tilknyttet objekter) der fortæller hvor mange procent af turene der indtil videre er under 1km.
 
 ### Bonus opgave
-CityBilens direktør, Herman, er en ond mand. Han vil ikke have at hans kunder rejser mere end 2 km. Lav en decorator i city-bilen.js der afbryder kaldet til slutTur hvis afstanden er mindre end 2 km.
+CityBilens direktør, Herman, er en ond mand. Han vil ikke have at hans kunder rejser mindre end 2 km. Lav en decorator i city-bilen.js der afbryder kaldet til slutTur hvis afstanden er mindre end 2 km.

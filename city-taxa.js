@@ -4,7 +4,7 @@
  * sig at der her blev indsat et
  */
 
-class realClock{
+class RealClock{
     now(){
         return new Date();
     }
@@ -16,7 +16,7 @@ class fakeClock{
     }
 }
 
-class cityPriceStrategy{
+class CityPriceStrategy{
     calculatePrice(afstand, tidGaaet){
         var price = (8.5 * (afstand)) + (6.25 * tidGaaet + 72);
         console.log(price);
@@ -30,5 +30,42 @@ class cityPriceStrategy{
 }
 
 
-var clock = new realClock();
-start(new Taxameter(clock, new cityPriceStrategy()));
+class DecoratorCity{
+    constructor(taxameter){
+        this.taxameter = taxameter;
+        this.clock = new RealClock;
+    }
+    getStartetTidspunkt() {
+        return this.taxameter.getStartetTidspunkt();
+    }
+    
+    startTur() {
+        return this.taxameter.startTur();
+    }
+    get minimumAfstandTilbage (){
+        return 2 - this.afstand;
+    }
+    slutTur() {
+        if(this.afstand < 2){
+            alert(`Du har ikke kørt langt nok, du mangler at køre ${this.minimumAfstandTilbage} km`);
+        }else{
+            return this.taxameter.slutTur();
+        }
+    }
+    
+    get afstand(){
+        return this.taxameter.afstand;
+    }
+
+    koer(delta_afst) {
+        return this.taxameter.koer(delta_afst);
+    }
+    
+    beregnPris() {
+        return this.taxameter.beregnPris();
+    }
+}
+const strategy = new CityPriceStrategy();
+const taxameter = new Taxameter(new RealClock(), strategy);
+const decoratorCity = new DecoratorCity(taxameter);
+start(decoratorCity);

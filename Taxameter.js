@@ -34,13 +34,14 @@ class Taxameter {
     }
 
     slutTur() {
+        alert("Det bliver: " + this.beregnPris() + " DKK");
         this.turStartetTidspunkt = undefined;
         this.afstand = 0;
     }
 
     koer(delta_afst) {
         console.log(delta_afst);
-        this.afstand += delta_afst*5;
+        this.afstand += delta_afst*50;
     }
 
     beregnPris() {
