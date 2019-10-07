@@ -24,4 +24,8 @@ class kroneStorPriceStrategy{
 
 
 var clock = new realClock();
-start(new Taxameter(clock, new kroneStorPriceStrategy()));
+
+const strategy = new KronePriceStrategy;
+const taxameter = new Taxameter(new RealClock(), strategy);
+const decoratorKrone = new DecoratorKrone(taxameter);
+start(decoratorKrone);
