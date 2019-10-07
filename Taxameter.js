@@ -16,36 +16,23 @@
  */
 class Taxameter {
 
-    // clock.now -> dato
-    constructor(clock, priceStrategy) {
-        this.priceStrategy = priceStrategy;
-        this.calculatePrice = priceStrategy.calculatePrice;
-        this.clock = clock
+    constructor() {
         this.afstand = 0;
         this.turStartetTidspunkt = undefined;
     }
 
     startTur() {
-        this.turStartetTidspunkt = this.clock.now();
+        this.turStartetTidspunkt = new Date();
     }
 
     slutTur() {
-        this.turStartetTidspunkt = undefined;
-        this.afstand = 0;
+
     }
 
     koer(delta_afst) {
-        console.log(delta_afst);
-        this.afstand += delta_afst*5;
     }
 
     beregnPris() {
-        
-        if(this.turStartetTidspunkt == undefined){
-            return 0;
-        }else{
-            var tidGaaet = (((this.clock.now() - this.turStartetTidspunkt)/1000)/60);
-        return this.calculatePrice(this.afstand, tidGaaet);
-        }
+        return 0;
     }
 }

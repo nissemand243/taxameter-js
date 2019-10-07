@@ -35,7 +35,3 @@ Udvid Taxameter.js med et firmanavn og en tekstbeskrivelse af prismodellen. Dett
 Elin Rejser har fået adgang til alle prismodellerne, og deres prismodel er altid den billigste af de andre modeller.
 
 Lav filerne elin-rejser.js og elin-rejser.html og genbrug så meget som mulig kode fra de andre systemer uden at have duplikeret kode.
-
-
-
-Har lavet til og med opgave 4. Jeg kunne ikke regne bonusopgave 1 og 2 ud indenfor tidsrammen
