@@ -3,7 +3,7 @@
  * og som I ikke skal ændre ved i denne opgave. Til gengæld kunne man forestille 
  * sig at der her blev indsat et
  */
-
+var storTaxa = true;
 class realClock{
     now(){
         return new Date();
@@ -25,7 +25,7 @@ class kroneStorPriceStrategy{
 
 var clock = new realClock();
 
-const strategy = new KronePriceStrategy;
-const taxameter = new Taxameter(new RealClock(), strategy);
+const strategy = new kroneStorPriceStrategy;
+const taxameter = new Taxameter(clock, strategy);
 const decoratorKrone = new DecoratorKrone(taxameter);
 start(decoratorKrone);

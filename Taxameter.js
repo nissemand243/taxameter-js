@@ -65,6 +65,11 @@ class DecoratorKrone{
     }
 
     startTur() {
+        if(storTaxa){
+            this.chaufør = "Bent";
+        }else{
+            this.chaufør ="Kurt";
+        }
         console.log(`Krone-taxa's lille vogn m. chauføren ${this.chaufør} er kørt en tur`);
         return this.taxameter.startTur();
     }

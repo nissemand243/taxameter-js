@@ -18,7 +18,7 @@ class fakeClock{
 
 class CityPriceStrategy{
     calculatePrice(afstand, tidGaaet){
-        var price = (8.5 * (afstand)) + (6.25 * tidGaaet + 72);
+        var price = (4.5 * (Math.floor(afstand)+1) + (7 * tidGaaet + 72));
         console.log(price);
         if(price < 75){
             return 75;
