@@ -101,6 +101,7 @@ function start(taxameter) {
             opdater();
         });
         elementer.slut.addEventListener("click", () => {
+            //Jeg har flyttet den alert med turens pris ind i taxametret for at få en funktion til at fungere.
             taxameter.slutTur();
             opdater();
         });
